@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" lang="en">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>판매 내역 - 판맥스</title>
+    <link rel="stylesheet" type="text/css" href="/panmax/src/css/util/common.css">
+    <link rel="stylesheet" type="text/css" href="/panmax/src/css/util/table.css">
+    <link rel="stylesheet" type="text/css" href="/panmax/src/css/analytics/sales.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <link rel="icon" href="/panmax/src/img/util/favicon.ico" type="image/x-icon"  sizes="16x16"> -->
+</head>
+<body>
+
+    <div class="div-content">
+
+        <div class="container-content">
+
+            <h4 class="text-head">
+                판매 내역
+                <p>결제금액 및 환불금액 현황을 일별, 요일별로 파악해볼 수 있습니다.</p>
+            </h4>
+
+            <div class="container-filter">
+
+                <!-- 이거 가짜임 -->
+                <tab-navigator>
+                    <p>전체</p>
+                    <span></span>
+                </tab-navigator>
+
+                <period-viewport></period-viewport>
+
+            </div>
+
+            <div class="container-indicators">
+
+                <div class="container-indicator">
+                    <h4>총 결제 금액</h4>
+                    <p id="totalAmt">
+                        <b>1.93</b>백만원
+                    </p>
+                </div>
+
+                <div class="container-indicator">
+                    <h4>총 원가 금액</h4>
+                    <p id="totalAmt">
+                        <b>1.05</b>백만원
+                    </p>
+                </div>
+
+                <div class="container-indicator">
+                    <h4>모바일 결제금액 점유율</h4>
+                    <p id="totalAmt">
+                        <b>97.1</b>% | <b>1.88</b>백만원
+                    </p>
+                </div>
+
+                <div class="container-indicator">
+                    <h4>환불금액 비율</h4>
+                    <p id="totalAmt">
+                        <b>4.5</b>% | <b>8.67</b>백만원
+                    </p>
+                </div>
+
+            </div>
+
+
+
+            <!-- <panmax-table>
+
+                <div class="head">
+                    <div class="cell">
+                        <div class="list big">주문번호</div>
+                        <div class="list medium">판매자 상품 코드</div>
+                        <div class="list big">상품명</div>
+                        <div class="list small">상품 원가</div>
+                        <div class="list small">판매가</div>
+                        <div class="list small">판매 개수</div>
+                        <div class="list small">판매 일자</div>
+                    </div>
+                    
+                </div>
+
+
+                <div class="body">
+
+                    <div class="cell">
+                        <div class="list big">
+                            <a class="text-orderNumber panmax" href="">
+                                245168904
+                            </a>
+                        </div>
+                        <div class="list medium">판매자 상품 코드</div>
+                        <div class="list big">상품명</div>
+                        <div class="list small">상품 원가</div>
+                        <div class="list small">판매가</div>
+                        <div class="list small">판매 개수</div>
+                        <div class="list small">판매 일자</div>
+                    </div>
+
+                    <div class="cell">
+                        <div class="list big">주문번호</div>
+                        <div class="list medium">판매자 상품 코드</div>
+                        <div class="list big">상품명</div>
+                        <div class="list small">상품 원가</div>
+                        <div class="list small">판매가</div>
+                        <div class="list small">판매 개수</div>
+                        <div class="list small">판매 일자</div>
+                    </div>
+
+                    <div class="cell">
+                        <div class="list big">주문번호</div>
+                        <div class="list medium">판매자 상품 코드</div>
+                        <div class="list big">상품명</div>
+                        <div class="list small">상품 원가</div>
+                        <div class="list small">판매가</div>
+                        <div class="list small">판매 개수</div>
+                        <div class="list small">판매 일자</div>
+                    </div>
+
+                    <div class="cell">
+                        <div class="list big">주문번호</div>
+                        <div class="list medium">판매자 상품 코드</div>
+                        <div class="list big">상품명</div>
+                        <div class="list small">상품 원가</div>
+                        <div class="list small">판매가</div>
+                        <div class="list small">판매 개수</div>
+                        <div class="list small">판매 일자</div>
+                    </div>
+
+                    <div class="cell">
+                        <div class="list big">
+                            <a class="text-orderNumber panmax" href="">
+                                245168904
+                            </a>
+                        </div>
+                        <div class="list medium">판매자 상품 코드</div>
+                        <div class="list big">상품명</div>
+                        <div class="list small">상품 원가</div>
+                        <div class="list small">판매가</div>
+                        <div class="list small">판매 개수</div>
+                        <div class="list small">판매 일자</div>
+                    </div>
+
+                    <div class="cell">
+                        <div class="list big">주문번호</div>
+                        <div class="list medium">판매자 상품 코드</div>
+                        <div class="list big">상품명</div>
+                        <div class="list small">상품 원가</div>
+                        <div class="list small">판매가</div>
+                        <div class="list small">판매 개수</div>
+                        <div class="list small">판매 일자</div>
+                    </div>
+
+                    <div class="cell">
+                        <div class="list big">주문번호</div>
+                        <div class="list medium">판매자 상품 코드</div>
+                        <div class="list big">상품명</div>
+                        <div class="list small">상품 원가</div>
+                        <div class="list small">판매가</div>
+                        <div class="list small">판매 개수</div>
+                        <div class="list small">판매 일자</div>
+                    </div>
+
+                    <div class="cell">
+                        <div class="list big">주문번호</div>
+                        <div class="list medium">판매자 상품 코드</div>
+                        <div class="list big">상품명</div>
+                        <div class="list small">상품 원가</div>
+                        <div class="list small">판매가</div>
+                        <div class="list small">판매 개수</div>
+                        <div class="list small">판매 일자</div>
+                    </div>
+
+                    <div class="cell">
+                        <div class="list big">주문번호</div>
+                        <div class="list medium">판매자 상품 코드</div>
+                        <div class="list big">상품명</div>
+                        <div class="list small">상품 원가</div>
+                        <div class="list small">판매가</div>
+                        <div class="list small">판매 개수</div>
+                        <div class="list small">판매 일자</div>
+                    </div>
+
+
+                </div>
+
+                <div class="footer">
+                    
+                </div>
+
+            </panmax-table> -->
+
+            <panmax-table>
+                <option variable="orderNumber" tag="주문번호" size="big"></option>
+                <option variable="productCode" tag="판매자 상품 코드" size="medium"></option>
+                <option variable="productName" tag="상품명" size="big"></option>
+                <option variable="productCost" tag="상품 원가" size="small"></option>
+                <option variable="productSell" tag="판매가" size="small"></option>
+                <option variable="sellAmt" tag="판매 개수" size="small"></option>
+                <option variable="sellDate" tag="판매 일자" size="medium"></option>
+            </panmax-table>
+
+            
+
+        </div>
+
+    </div>
+
+
+	<script src="/panmax/src/js/util/table.js" type="module" charset="utf-8"></script>
+	<script src="/panmax/src/js/analytics/sales.js" type="module" charset="utf-8"></script>
+</body>
+</html>

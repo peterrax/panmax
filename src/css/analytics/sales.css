@@ -1,0 +1,547 @@
+/* ------------------- div ------------------- */
+
+.div-content{
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0px 0px 120px;
+    margin: 0px;
+    background-color: #f5f5f7;
+}
+
+/* ------------------- container ------------------- */
+
+.container-content{
+    position: relative;
+    height: auto;
+    width: 1240px;
+    padding: 48px 0px 0px;
+    margin: 0px auto;
+}
+
+.container-filter{
+    display: flex;
+    position: relative;
+    height: 40px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    border-bottom: solid 1px #d6d6d6;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-indicators{
+    display: flex;
+    position: relative;
+    height: 84px;
+    width: 100%;
+    padding: 36px 0px 20px;
+    margin: 0px;
+    justify-content: space-between;
+}
+
+.container-indicator{
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
+    width: 301px;
+    padding: 16px;
+    margin: 0px;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.container-indicator h4{
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666666;
+    padding: 0px 0px 10px;
+    margin: 0px;
+    line-height: 1.1;
+}
+
+.container-indicator p{
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    color: #1d1d1d;
+    padding: 0px 0px 10px;
+    margin: 0px;
+}
+
+.container-indicator p b{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* ------------------- text ------------------- */
+
+.text-head{
+    position: relative;
+    font-size: 32px;
+    font-weight: 500;
+    color: #1d1d1d;
+    padding: 36px 0px 24px;
+    margin: 0px;
+    vertical-align: baseline;
+}
+
+.text-head p{
+    display: inline-block;
+    font-size: 14px;
+    margin: 0px;
+}
+
+.text-orderNumber{
+    display: flex;
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+    color: #005fe8;
+    text-decoration: underline;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+    align-items: center;
+    gap: 12px;
+}
+
+.text-orderNumber::before{
+    content: '';
+    display: block;
+    position: relative;
+    height: 28px;
+    width: 28px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.text-orderNumber.panmax::before{
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 28 28'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;%7D.cls-1,.cls-2,.cls-3%7Bstroke-width:0px;%7D.cls-4%7Bclip-path:url(%23clippath);%7D.cls-2%7Bfill:%23005fe8;%7D.cls-3%7Bfill:%23fff;%7D%3C/style%3E%3CclipPath id='clippath'%3E%3Crect class='cls-1' width='28' height='28'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg class='cls-4'%3E%3Cpath class='cls-2' d='M27.3,11.69l-5.54-8.32c-.77-1.16-2.07-1.85-3.46-1.85H4.16C1.86,1.52,0,3.39,0,5.68v16.63c0,2.3,1.86,4.16,4.16,4.16h14.14c1.39,0,2.69-.69,3.46-1.85l5.54-8.32c.93-1.4.93-3.22,0-4.61Z'/%3E%3Cpath class='cls-3' d='M18.78,11.77v-.02c0-1.23-.26-2.3-.78-3.2-.52-.91-1.25-1.61-2.2-2.11-.95-.5-2.07-.75-3.37-.75h-7.43v16.63h4.89v-4.54h2.55c1.3,0,2.42-.24,3.37-.73.95-.49,1.68-1.18,2.2-2.08.52-.9.78-1.96.78-3.19ZM13.84,11.77c0,.79-.23,1.39-.69,1.79-.46.4-1.09.61-1.9.61h-1.38v-4.81h1.38c.81,0,1.44.2,1.9.59s.69.99.69,1.79v.02Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.text-orderNumber.naver::before{
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 28 28'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;%7D.cls-1,.cls-2,.cls-3%7Bstroke-width:0px;%7D.cls-4%7Bclip-path:url(%23clippath);%7D.cls-2%7Bfill:%2303c75a;%7D.cls-3%7Bfill:%23fff;%7D%3C/style%3E%3CclipPath id='clippath'%3E%3Crect class='cls-1' width='28' height='28'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg class='cls-4'%3E%3Crect class='cls-2' x='1' y='2' width='24' height='24' rx='.08' ry='.08'/%3E%3Cpolygon class='cls-3' points='15.13 7.86 15.13 14.06 10.89 7.86 6.3 7.86 6.3 20.14 10.87 20.14 10.87 13.94 15.11 20.14 19.7 20.14 19.7 7.86 15.13 7.86'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.text-orderNumber.coupang::before{
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 28 28'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23d83128;%7D.cls-1,.cls-2,.cls-3%7Bstroke-width:0px;%7D.cls-2%7Bfill:none;%7D.cls-4%7Bclip-path:url(%23clippath);%7D.cls-3%7Bfill:%23fff;%7D%3C/style%3E%3CclipPath id='clippath'%3E%3Crect class='cls-2' width='28' height='28'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg class='cls-4'%3E%3Ccircle class='cls-1' cx='13' cy='14' r='13'/%3E%3Cpath class='cls-3' d='M19.01,18.77l-2.49-1.27c-.12-.06-.23,0-.29.12v.06h0c-.4.81-1.21,1.68-2.89,1.73-2.78,0-3.18-2.37-3.18-3.01v-4.74c0-.69.46-3.01,3.18-3.01,1.68,0,2.54.93,2.89,1.73.06.06.12.17.23.17h.12l2.43-1.27c.12-.06.12-.17.06-.29h0c-.06-.12-.12-.17-.12-.29-.75-1.33-2.31-2.83-5.61-2.83h0c-3.24,0-4.86,1.5-5.61,2.83-.81,1.21-.87,2.72-.87,3.01v4.45c0,.29.06,1.73.81,3.12.75,1.33,2.31,2.83,5.61,2.83h.06c3.24,0,4.86-1.5,5.61-2.83l.17-.29c0-.06-.06-.17-.12-.23Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ------------------- period viewport ------------------- */
+
+
+period-viewport{
+    display: block;
+    position: relative;
+    height: 24px;
+    width: auto;
+    overflow: hidden;
+}
+
+period-viewport button.indicator{
+    display: flex;
+    position: relative;
+    height: 24px;
+    width: auto;
+    padding: 0px 8px;
+    margin: 0px;
+    background-color: #f5f5f7;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1d1d1d;
+    cursor: pointer;
+    align-items: center;
+    gap: 4px;
+    transition-property: background-color;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0,0,0.4,1);
+}
+
+period-viewport button.indicator:hover{
+    background-color: #ebebed;
+    transition-duration: 0.14s;
+}
+
+period-viewport button.indicator::after{
+    content: '';
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 10px;
+    margin: 2px 0px 0px;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='_%3F덉씠%3F%3F1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.93 5.04'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%231d1d1d;stroke-width:0px;%7D%3C/style%3E%3C/defs%3E%3Cpath class='cls-1' d='M5.45,4.86l4.21-3.54c.32-.27.36-.74.09-1.06-.27-.32-.74-.36-1.06-.09l-3.73,3.13L1.23.18C.91-.09.44-.05.18.27c-.27.32-.22.79.09,1.06l4.21,3.54c.27.23.68.24.96,0Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* ------------------- period selector ------------------- */
+
+period-selector{
+    display: block;
+    position: absolute;
+    height: 378px;
+    width: 468px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: rgba(0,0,0,0.15) 0px 10px 20px;
+    overflow: hidden;
+    top: calc(100% + 4px);
+    right: -12px;
+    z-index: 20;
+}
+
+period-selector div.content{
+    box-sizing: border-box;
+    position: relative;
+    height: 322px;
+    width: 100%;
+    padding: 20px 20px 0px;
+}
+
+period-selector div.footer{
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    height: 56px;
+    width: 100%;
+    padding: 0px 10px;
+    margin: 0px;
+    background-color: #fafafa;
+    border-top: solid 1px #d6d6d6;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+period-selector div.shortcut{
+    display: flex;
+    position: relative;
+    height: 28px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px 0px 12px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+period-selector div.shortcut button{
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: calc(100% / 7);
+    padding: 0px;
+    margin: 0px;
+    background-color: #f5f5f7;
+    border: none;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    color: #8a8a8a;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+period-selector div.shortcut button:hover{
+    background-color: #ebebed;
+}
+
+
+period-selector button.action{
+    display: flex;
+    position: relative;
+    height: 36px;
+    width: 84px;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    transition-property: background-color;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0,0,0.4,1);
+    cursor: pointer;
+}
+
+period-selector button.action:hover{
+    transition-duration: 0.14s;
+}
+
+period-selector button.action.apply{
+    background-color: #005fe8;
+    color: #ffffff;
+}
+
+period-selector button.action.apply:hover{
+    background-color: #0047ae;
+}
+
+period-selector button.action.cancel{
+    background-color: #ebebed;
+    color: #8a8a8a;
+}
+
+period-selector button.action.cancel:hover{
+    background-color: #d6d6d6;
+}
+
+period-selector div.calendars{
+    display: flex;
+    position: relative;
+    height: auto;
+    width: 100%;
+    padding: 0px;
+    justify-content: space-between;
+}
+
+period-selector div.nav-buttons{
+    box-sizing: border-box;
+    display: flex;
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    padding: 0px 8px;
+    margin: 0px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+period-selector div.nav-buttons div{
+    position: relative;
+    display: inline-flex;
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+    gap: 4px;
+}
+
+period-selector div.nav-buttons button{
+    position: relative;
+    height: 14px;
+    width: 14px;
+    padding: 0px;
+    margin: 0px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+period-selector div.nav-buttons button.prevYear{
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 14 14'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;%7D.cls-1,.cls-2%7Bstroke-width:0px;%7D.cls-3%7Bclip-path:url(%23clippath);%7D.cls-2%7Bfill:%23333;%7D%3C/style%3E%3CclipPath id='clippath'%3E%3Crect class='cls-1' x='0' y='0' width='14' height='14' transform='translate(14 14) rotate(-180)'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg class='cls-3'%3E%3Cpath class='cls-2' d='M1.22,6.36s0,0,0,0L5.94.74c.35-.42.99-.48,1.41-.12.42.35.48.99.12,1.41L3.3,7l4.17,4.97c.35.42.3,1.05-.12,1.41-.42.35-1.05.3-1.41-.12L1.23,7.64s0,0,0,0c-.31-.36-.32-.91,0-1.29ZM6.53,6.36c-.32.38-.31.92,0,1.29,0,0,0,0,0,0l4.71,5.62c.35.42.99.48,1.41.12.42-.35.48-.99.12-1.41l-4.17-4.97,4.17-4.97c.35-.42.3-1.05-.12-1.41-.42-.35-1.05-.3-1.41.12l-4.71,5.62s0,0,0,0Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+period-selector div.nav-buttons button.prevMonth{
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 14 14'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;%7D.cls-1,.cls-2%7Bstroke-width:0px;%7D.cls-3%7Bclip-path:url(%23clippath);%7D.cls-2%7Bfill:%23333;%7D%3C/style%3E%3CclipPath id='clippath'%3E%3Crect class='cls-1' x='0' y='0' width='14' height='14' transform='translate(14 14) rotate(-180)'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg class='cls-3'%3E%3Cpath class='cls-2' d='M3.88,6.36c-.32.38-.31.92,0,1.29,0,0,0,0,0,0l4.71,5.62c.35.42.99.48,1.41.12.42-.35.48-.99.12-1.41l-4.17-4.97,4.17-4.97c.35-.42.3-1.05-.12-1.41-.42-.35-1.05-.3-1.41.12L3.88,6.36s0,0,0,0Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+period-selector div.nav-buttons button.nextYear{
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 14 14'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;%7D.cls-1,.cls-2%7Bstroke-width:0px;%7D.cls-3%7Bclip-path:url(%23clippath);%7D.cls-2%7Bfill:%23333;%7D%3C/style%3E%3CclipPath id='clippath'%3E%3Crect class='cls-1' width='14' height='14'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg class='cls-3'%3E%3Cpath class='cls-2' d='M12.78,7.64s0,0,0,0l-4.71,5.62c-.35.42-.99.48-1.41.12-.42-.35-.48-.99-.12-1.41l4.17-4.97L6.53,2.03c-.35-.42-.3-1.05.12-1.41.42-.35,1.05-.3,1.41.12l4.71,5.62s0,0,0,0c.31.36.32.91,0,1.29ZM7.47,7.64c.32-.38.31-.92,0-1.29,0,0,0,0,0,0L2.76.74c-.35-.42-.99-.48-1.41-.12-.42.35-.48.99-.12,1.41l4.17,4.97L1.22,11.97c-.35.42-.3,1.05.12,1.41.42.35,1.05.3,1.41-.12l4.71-5.62s0,0,0,0Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+period-selector div.nav-buttons button.nextMonth{
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 14 14'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;%7D.cls-1,.cls-2%7Bstroke-width:0px;%7D.cls-3%7Bclip-path:url(%23clippath);%7D.cls-2%7Bfill:%23333;%7D%3C/style%3E%3CclipPath id='clippath'%3E%3Crect class='cls-1' width='14' height='14'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg class='cls-3'%3E%3Cpath class='cls-2' d='M10.12,7.64c.32-.38.31-.92,0-1.29,0,0,0,0,0,0L5.41.74c-.35-.42-.99-.48-1.41-.12-.42.35-.48.99-.12,1.41l4.17,4.97-4.17,4.97c-.35.42-.3,1.05.12,1.41.42.35,1.05.3,1.41-.12l4.71-5.62s0,0,0,0Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+period-selector div.calendar{
+    position: relative;
+    height: 250px;
+    width: 210px;
+    padding: 0px;
+    margin: 0px;
+}
+
+period-selector div.calendar div.title{
+    display: flex;
+    position: relative;
+    height: 40px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+period-selector div.calendar div.title p{
+    font-size: 16px;
+    font-weight: 500;
+    color: #1d1d1d;
+    margin: 0px;
+}
+
+period-selector div.calendar div.head{
+    display: flex;
+    position: relative;
+    height: 30px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+period-selector div.calendar div.head p{
+    display: flex;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1d1d1d;
+    justify-content: center;
+    align-items: center;
+}
+
+period-selector div.calendar div.head p:first-child{
+    color: #de071c;
+}
+
+period-selector div.calendar div.head p:last-child{
+    color: #005fe8;
+}
+
+period-selector div.calendar div.action{
+    display: flex;
+    position: relative;
+    height: auto;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    flex-wrap: wrap;
+}
+
+period-selector div.calendar div.action div{
+    display: flex;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    padding: 0px;
+    margin: 0px;
+    align-items: center;
+}
+
+period-selector div.calendar div.action div.checked::after{
+    content: '';
+    position: absolute;
+    height: calc(100% - 2px);
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: #f5f5f7;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+period-selector div.calendar div.action div.checked.start::after{
+    width: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+}
+
+period-selector div.calendar div.action div.checked.end::after{
+    width: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+}
+
+period-selector div.calendar div.action div label{
+    position: relative;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+period-selector div.calendar div.action div label.inactive{
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+period-selector div.calendar div.action div label input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    opacity: 0;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.period-selector-span{
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    padding: 0px;
+    margin: 0px auto;
+    border-radius: 50%;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    color: #1d1d1d;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+period-selector div.calendar div.action div label input:checked + .period-selector-span{
+    background-color: #005fe8;
+    color: #ffffff;
+}
+
+
+
+
+/* 가짜임 */
+/* ------------------- tab navigator ------------------- */
+
+tab-navigator{
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: auto;
+    align-items: center;
+}
+
+tab-navigator p{
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1d1d1d;
+    padding: 0px;
+    margin: 0px;
+}
+
+tab-navigator span{
+    position: absolute;
+    height: 2px;
+    width: 25.77px;
+    border-radius: 2px 2px 0px 0px;
+    background-color: #005fe8;
+    top: calc(100% - 1px);
+}
