@@ -1,0 +1,299 @@
+/* -------------------------------------- dashboard-header -------------------------------------- */
+
+dashboard-header{
+    position: fixed;
+    height: 48px;
+    width: calc(100% - 256px);
+    padding: 0px;
+    margin: 0px;
+    background-color: rgba(253,253,253,0.74);
+	backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    top: 0px;
+    right: 0px;
+    z-index: 20;
+}
+
+dashboard-header div.container{
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0px 8px 0px;
+    margin: 0px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+dashboard-header a{
+    position: relative;
+    height: 32px;
+    width: 32px;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 50%;
+    background-color: #005fe8;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+
+dashboard-header a::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0,0,0.4,1);
+}
+
+dashboard-header a:hover::after{
+    opacity: 1;
+    transition-duration: 0.14s;
+}
+
+dashboard-header .btn-menu{
+	display: block;
+	position: relative;
+	width: 48px;
+    height: 48px;
+    padding: 0px;
+    margin: 0px;
+    background-color: transparent;
+    border: none;
+	outline: 0;
+    cursor: pointer;
+}
+
+dashboard-header .btn-menu span{
+	position: absolute;
+	width: 20px;
+	height: 2px;
+	display: block;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: none;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+dashboard-header .btn-menu span span{
+	display: block;
+	width: 20px;
+	height: 1px;
+	border-radius: 0.5px;
+	position: absolute;
+	background-color: #1d1d1d;
+}
+
+dashboard-header .btn-menu span span.top{
+	top: -4px;
+	transition-property: top, transform;
+	transition-delay: 0.15s, 0s;
+	transition-duration: 0.15s, 0.15s;
+	transition-timing-function: cubic-bezier(0.25, 0.1, 0.1, 0.25);
+}
+
+dashboard-header .btn-menu.active span span.top{
+	top: 0px;
+	transform: translate(-50%, -50%) rotate(45deg);
+	transition-delay: 0s, 0.15s;
+}
+
+dashboard-header .btn-menu span span.bottom{
+	top: 4px;
+	transition-property: top, transform;
+	transition-delay: 0.15s, 0s;
+	transition-duration: 0.15s, 0.15s;
+	transition-timing-function: cubic-bezier(0.25, 0.1, 0.1, 0.25);
+}
+
+dashboard-header .btn-menu.active span span.bottom{
+	top: 0px;
+	transform: translate(-50%, -50%) rotate(-45deg);
+	transition-delay: 0s, 0.15s;
+}
+
+/* -------------------------------------- sidebar -------------------------------------- */
+
+side-bar{
+    display: block;
+    position: sticky;
+    height: 100vh;
+    width: 256px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #ffffff;
+    top: 0px;
+    z-index: 20;
+}
+
+side-bar svg{
+    display: block;
+    height: 28px;
+    padding: 10px 0px 10px 20px;
+}
+
+side-bar div.main{
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    height: 58px;
+    width: 100%;
+    padding: 0px 10px;
+    margin: 0px 0px 24px;
+    border-top: solid 1px #d6d6d6;
+    border-bottom: solid 1px #d6d6d6;
+    align-items: center;
+}
+
+side-bar .btn-router{
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    height: 38px;
+    width: 100%;
+    padding: 0px 0px 0px 46px;
+    background-color: transparent;
+    border: none;
+    border-radius: 19px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1d1d1d;
+    align-items: center;
+    transition-property: background-color;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0,0,0.4,1);
+    cursor: pointer;
+}
+
+side-bar .btn-router:hover{
+    background-color: #ebebed;
+    transition-duration: 0.14s;
+}
+
+side-bar .btn-router.active{
+    color: #ffffff;
+    background-color: #005fe8;
+}
+
+/* ------------------- chest ------------------- */
+
+side-bar div.chest{
+    position: relative;
+    height: 38px;
+    width: calc(100% - 20px);
+    padding: 0px;
+    margin: 0px auto 8px;
+    background-color: #ffffff;
+    border-radius: 19px;
+    overflow: hidden;
+    transition-property: height, padding, background-color;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.52, 0.16, 0.24, 1);
+}
+
+side-bar div.chest.open{
+    padding: 0px 0px 20px;
+    background-color: #f5f5f7;
+}
+
+side-bar div.chest button.btn-router{
+    margin: 0px 0px 4px;
+}
+
+side-bar div.chest a.btn-router{
+    height: 32px;
+    padding: 0px 0px 0px 58px;
+    margin: 0px 0px 4px;
+    font-size: 13px;
+}
+
+side-bar div.chest a.btn-router:last-of-type{
+    margin: 0px;
+}
+
+@media screen and (max-width: 1600px){
+    
+    /* -------------------------------------- dashboard-header -------------------------------------- */
+
+    dashboard-header{
+        height: 38px;
+        width: calc(100% - 205px);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    
+    dashboard-header div.container{
+        padding: 0px 6px 0px;
+    }
+    
+    dashboard-header a{
+        height: 26px;
+        width: 26px;
+    }
+    
+    /* -------------------------------------- sidebar -------------------------------------- */
+    
+    side-bar{
+        width: 205px;
+    }
+    
+    side-bar svg{
+        height: 22px;
+        padding: 8px 0px 8px 16px;
+    }
+    
+    side-bar div.main{
+        height: 46px;
+        padding: 0px 8px;
+        margin: 0px 0px 19px;
+    }
+    
+    side-bar .btn-router{
+        height: 30px;
+        padding: 0px 0px 0px 37px;
+        border-radius: 15px;
+        font-size: 12px;
+    }
+    
+    /* ------------------- chest ------------------- */
+    
+    side-bar div.chest{
+        height: 30px;
+        width: calc(100% - 16px);
+        margin: 0px auto 6px;
+        border-radius: 15px;
+    }
+    
+    side-bar div.chest.open{
+        padding: 0px 0px 16px;
+    }
+    
+    side-bar div.chest button.btn-router{
+        margin: 0px 0px 3px;
+    }
+    
+    side-bar div.chest a.btn-router{
+        height: 26px;
+        padding: 0px 0px 0px 46px;
+        margin: 0px 0px 3px;
+        font-size: 12px;
+    }
+    
+}
+
+@media screen and (max-width: 1160px){
+    
+}
+
+@media screen and (max-width: 767px){
+    
+}

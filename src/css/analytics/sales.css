@@ -1,13 +1,15 @@
 /* ------------------- div ------------------- */
 
 .div-content{
+    display: grid;
     position: relative;
     height: auto;
     min-height: 100vh;
     width: 100%;
-    padding: 0px 0px 120px;
+    padding: 0px;
     margin: 0px;
     background-color: #f5f5f7;
+    grid-template-columns: 256px calc(100% - 256px);
 }
 
 /* ------------------- container ------------------- */
@@ -16,7 +18,7 @@
     position: relative;
     height: auto;
     width: 1240px;
-    padding: 48px 0px 0px;
+    padding: 48px 0px 120px;
     margin: 0px auto;
 }
 
@@ -514,9 +516,6 @@ period-selector div.calendar div.action div label input:checked + .period-select
     color: #ffffff;
 }
 
-
-
-
 /* 가짜임 */
 /* ------------------- tab navigator ------------------- */
 
@@ -544,4 +543,198 @@ tab-navigator span{
     border-radius: 2px 2px 0px 0px;
     background-color: #005fe8;
     top: calc(100% - 1px);
+}
+
+@media screen and (max-width: 1600px){
+    
+    /* ------------------- div ------------------- */
+
+    .div-content{
+        grid-template-columns: 205px calc(100% - 205px);
+    }
+    
+    /* ------------------- container ------------------- */
+    
+    .container-content{
+        box-sizing: border-box;
+        max-width: 1068px;
+        width: 100%;
+        padding: 38px 38px 96px;
+    }
+    
+    .container-filter{
+        height: 32px;
+    }
+    
+    .container-indicators{
+        height: 67px;
+        padding: 29px 0px 16px;
+    }
+    
+    .container-indicator{
+        width: 241px;
+        padding: 13px;
+        border-radius: 10px;
+    }
+    
+    .container-indicator h4{
+        font-size: 11px;
+        padding: 0px 0px 8px;
+    }
+    
+    .container-indicator p{
+        font-size: 16px;
+        padding: 0px 0px 8px;
+    }
+    
+    .container-indicator p b{
+        font-size: 19px;
+    }
+    
+    /* ------------------- text ------------------- */
+    
+    .text-head{
+        font-size: 26px;
+        padding: 29px 0px 19px;
+    }
+    
+    .text-head p{
+        font-size: 11px;
+    }
+    
+    .text-orderNumber{
+        font-size: 11px;
+        gap: 10px;
+    }
+    
+    .text-orderNumber::before{
+        height: 22px;
+        width: 22px;
+    }
+    
+    /* ------------------- period viewport ------------------- */
+    
+    
+    period-viewport{
+        height: 19px;
+    }
+    
+    period-viewport button.indicator{
+        height: 19px;
+        padding: 0px 6px;
+        border-radius: 5px;
+        font-size: 11px;
+        gap: 3px;
+    }
+    
+    period-viewport button.indicator::after{
+        width: 8px;
+        margin: 2px 0px 0px;
+    }
+    
+    
+    /* ------------------- period selector ------------------- */
+    
+    period-selector{
+        height: 302px;
+        width: 374px;
+        border-radius: 6px;
+        box-shadow: rgba(0,0,0,0.15) 0px 8px 16px;
+        top: calc(100% + 3px);
+        right: -10px;
+    }
+    
+    period-selector div.content{
+        height: 258px;
+        padding: 16px 16px 0px;
+    }
+    
+    period-selector div.footer{
+        height: 45px;
+        padding: 0px 8px;
+        gap: 8px;
+    }
+    
+    period-selector div.shortcut{
+        height: 22px;
+        margin: 0px 0px 10px;
+        border-radius: 6px;
+    }
+    
+    period-selector div.shortcut button{
+        font-size: 10px;
+    }
+    
+    
+    period-selector button.action{
+        height: 29px;
+        width: 67px;
+        border-radius: 6px;
+        font-size: 11px;
+    }
+    
+    period-selector div.nav-buttons{
+        height: 32px;
+        padding: 0px 6px;
+    }
+    
+    period-selector div.nav-buttons div{
+        gap: 3px;
+    }
+    
+    period-selector div.nav-buttons button{
+        height: 11px;
+        width: 11px;
+    }
+    
+    period-selector div.calendar{
+        height: 200px;
+        width: 168px;
+    }
+    
+    period-selector div.calendar div.title{
+        height: 32px;
+    }
+    
+    period-selector div.calendar div.title p{
+        font-size: 13px;
+    }
+    
+    period-selector div.calendar div.head{
+        height: 24px;
+    }
+    
+    period-selector div.calendar div.head p{
+        height: 24px;
+        width: 24px;
+        font-size: 10px;
+    }
+    
+    period-selector div.calendar div.action div{
+        height: 24px;
+        width: 24px;
+    }
+    
+    period-selector div.calendar div.action div.checked::after{
+        height: calc(100% - 2px);
+    }
+        
+    .period-selector-span{
+        height: 24px;
+        width: 24px;
+        font-size: 10px;
+    }
+    
+    /* 가짜임 */
+    /* ------------------- tab navigator ------------------- */
+    
+    tab-navigator p{
+        font-size: 11px;
+    }
+    
+    tab-navigator span{
+        height: 2px;
+        width: 20.62px;
+    }
+    
 }
