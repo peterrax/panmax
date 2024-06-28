@@ -134,6 +134,20 @@ side-bar{
     z-index: 20;
 }
 
+side-bar::after{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+}
+
+side-bar::before{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+}
+
 side-bar svg{
     display: block;
     height: 28px;
@@ -291,6 +305,104 @@ side-bar div.chest a.btn-router:last-of-type{
 }
 
 @media screen and (max-width: 1160px){
+    
+    /* -------------------------------------- dashboard-header -------------------------------------- */
+
+    dashboard-header{
+        height: 52px;
+        width: 100%;
+    }
+    
+    dashboard-header a{
+        height: 32px;
+        width: 32px;
+    }
+    
+    /* -------------------------------------- sidebar -------------------------------------- */
+    
+    side-bar{
+        position: fixed;
+        width: 256px;
+        top: 0px;
+        left: 0px;
+        transform: translateX(-100%);
+        transition-property: transform;
+        transition-duration: 0.4s;
+        transition-timing-function: cubic-bezier(0,0,0.4,1);
+    }
+
+    side-bar::after{
+        height: 100%;
+        width: 100%;
+        box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.3);
+        top: 0px;
+        left: 0px;
+        pointer-events: none;
+    }
+
+    side-bar::before{
+        height: 100vh;
+        width: 100vw;
+        padding: 0px;
+        margin: 0px;
+        background-color: rgba(0,0,0,0.4);
+        opacity: 0;
+        top: 0px;
+        left: 256px;
+        pointer-events: none;
+        transition-property: opacity, width;
+        transition-duration: 0.4s;
+        transition-timing-function: cubic-bezier(0,0,0.4,1);
+        z-index: -1;
+    }
+
+    side-bar.open{
+        transform: translateX(0);
+    }
+
+    side-bar.open::before{
+        width: calc(100vw - 256px);
+        opacity: 1;
+        pointer-events: all;
+    }
+    
+    side-bar svg{
+        height: 28px;
+        padding: 12px 0px 12px 20px;
+    }
+    
+    side-bar div.main{
+        height: 48px;
+        padding: 0px 12px;
+        margin: 0px 0px 20px;
+    }
+    
+    side-bar .btn-router{
+        height: 32px;
+        padding: 0px 0px 0px 48px;
+        border-radius: 16px;
+        font-size: 14px;
+    }
+    
+    /* ------------------- chest ------------------- */
+    
+    side-bar div.chest{
+        height: 32px;
+        width: calc(100% - 24px);
+        margin: 0px auto 8px;
+        border-radius: 16px;
+    }
+    
+    side-bar div.chest button.btn-router{
+        margin: 0px 0px 4px;
+    }
+    
+    side-bar div.chest a.btn-router{
+        height: 32px;
+        padding: 0px 0px 0px 60px;
+        margin: 0px 0px 4px;
+        font-size: 14px;
+    }
     
 }
 

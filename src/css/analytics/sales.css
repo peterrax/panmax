@@ -10,6 +10,7 @@
     margin: 0px;
     background-color: #f5f5f7;
     grid-template-columns: 256px calc(100% - 256px);
+    overflow: hidden;
 }
 
 /* ------------------- container ------------------- */
@@ -735,6 +736,32 @@ tab-navigator span{
     tab-navigator span{
         height: 2px;
         width: 20.62px;
+    }
+    
+}
+
+@media screen and (max-width: 1160px){
+    
+    /* ------------------- div ------------------- */
+
+    .div-content{
+        display: block;
+    }
+    
+    /* ------------------- container ------------------- */
+    
+    .container-content{
+        padding: 52px 38px 96px;
+    }
+    
+}
+
+@media screen and (max-width: 767px){
+    
+    /* ------------------- container ------------------- */
+    
+    .container-content{
+        padding: 52px 24px 96px;
     }
     
 }
