@@ -5,9 +5,7 @@ class panmaxTable extends HTMLElement{
     }
 
     connectedCallback(){
-
-        let pagination = 0;
-        let max = 50;
+        
         let options = this.querySelectorAll('option');
 
         this.innerHTML = `
@@ -24,21 +22,18 @@ class panmaxTable extends HTMLElement{
             <div class="pagination">
                 <table-paginator></table-paginator>
                 <button class="btn-pagination prev"></button>
+                <input name="page" class="input-pagination" type="number" value="1" disabled>
                 <button class="btn-pagination next"></button>
             </div>
         </div>`;
-
 
         var generateBody = () => {
 
             let datas = JSON.parse(this.getAttribute('datas'));
             if(!datas) return 0;
 
-            max = this.querySelector('input[name=max-table-pagination]') ? 
-            Number(this.querySelector('input[name=max-table-pagination]:checked').value) : 50;
-
             this.querySelector('div.body').innerHTML =
-            datas.slice(pagination*max, pagination*max + max).map((data) => {
+            datas.map((data) => {
 
                 return `
                 <div class="cell">
@@ -70,8 +65,8 @@ class panmaxTable extends HTMLElement{
             .forEach((input) => {
                 input.addEventListener('change', (e) => {
                     
-                    pagination = 0;
-                    generateBody();
+                    this.querySelector('input[name=page]').value = 1;
+                    this.dispatchEvent(new Event('change'));
     
                 })
             })
@@ -80,21 +75,23 @@ class panmaxTable extends HTMLElement{
 
         document.querySelector('button.btn-pagination.prev').addEventListener('click', () => {
 
-            if(pagination == 0) return 0;
+            if(this.querySelector('input[name=page]').value == 1) return 0;
 
-            pagination--;
-            generateBody();
+            this.querySelector('input[name=page]').value--;
+            this.dispatchEvent(new Event('change'));
 
         });
 
         document.querySelector('button.btn-pagination.next').addEventListener('click', () => {
 
             let datas = JSON.parse(this.getAttribute('datas'));
+            let max = this.querySelector('input[name=max-table-pagination]') ? 
+            Number(this.querySelector('input[name=max-table-pagination]:checked').value) : 50;
 
-            if(pagination > datas.length / max - 1) return 0;
+            if(datas.length < max) return 0;
 
-            pagination++;
-            generateBody();
+            this.querySelector('input[name=page]').value++;
+            this.dispatchEvent(new Event('change'));
 
         });
 

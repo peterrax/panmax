@@ -465,10 +465,7 @@ var periodChangeObserver = new MutationObserver((mutations) => {
     mutations.forEach((m) => {
         if(m.type === 'attributes' && m.attributeName == 'selected'){
             
-            let selected = document.querySelector('period-viewport')
-            .getAttribute('selected').split(',');
-
-            console.log(selected)
+            updateSalesTable();
 
 
         }
@@ -478,6 +475,30 @@ periodChangeObserver.observe(document.querySelector('period-viewport'), { attrib
 
 
 var init = () => {
+
+    updateSalesTable();
+
+}
+
+
+
+let salesTable = document.querySelector('panmax-table[name=sales]');
+var updateSalesTable = () => {
+
+    let table = salesTable;
+    let max = table.querySelector('input[name=max-table-pagination]') ? 
+    Number(table.querySelector('input[name=max-table-pagination]:checked').value) : 50;
+    let currentPage = table.querySelector('input[name=page]').value;
+    let period = document.querySelector('period-viewport')
+    .getAttribute('selected').split(',');
+
+
+    console.log('//-----------------data update!-----------------//');
+    console.log('최대 표시 행 수: ', max);
+    console.log('현재 페이지 번호: ', currentPage);
+    console.log('기간: ', period);
+
+
 
     // 데이터만 채우는 거임. 그래서, <a> 태그 쓰고 싶으면 테이블에 넣기 전에 미리 만들어줘야 됨.
     // 쉼표나 원화도 미리 변형 시켜줘야됨.
@@ -518,10 +539,12 @@ var init = () => {
     }
 
     document.querySelector('panmax-table')
-    .setAttribute('datas', JSON.stringify(dummyData));
-
+    .setAttribute('datas', JSON.stringify(dummyData.slice((currentPage-1)*max, (currentPage-1)*max + max)));
+    
 
 }
+salesTable.addEventListener('change', () => { updateSalesTable() });
+
 
 
 init();
