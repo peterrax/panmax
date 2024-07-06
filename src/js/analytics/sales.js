@@ -547,4 +547,6 @@ salesTable.addEventListener('change', () => { updateSalesTable() });
 
 
 
-init();
+setTimeout(() => {
+    init();
+}, 0);
