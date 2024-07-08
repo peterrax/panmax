@@ -173,9 +173,13 @@ class Sidebar extends HTMLElement{
 
         // 현재 페이지의 버튼을 활성화. '메인'의 경우 chestOpen 제외
         let currentPageBtn = this.querySelector(`a[href="${window.location.pathname}"]`);
-        if($(currentPageBtn.parentNode.parentNode).is('.chest'))
-            chestOpen(currentPageBtn.parentNode.parentNode);
-        $(currentPageBtn).addClass('active');
+        if(currentPageBtn){
+
+            if($(currentPageBtn.parentNode.parentNode).is('.chest'))
+                chestOpen(currentPageBtn.parentNode.parentNode);
+            $(currentPageBtn).addClass('active');
+
+        }
         
 
         // close sidebar when table or mobile

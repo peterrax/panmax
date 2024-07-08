@@ -195,12 +195,12 @@ class tablePaginator extends HTMLElement{
         
         };
 
-        $('body').click((e) => {
+        document.querySelector('body').addEventListener('click', (e) => {
             const target = e.target;
             if(!$(target).is(this.querySelector('p')) && !$(target).is(this.querySelector('div.container')) && !$(target).is(this.querySelector('input[type=radio]'))){
                 closeDropDown();
             }
-        });
+        }, true);
 
     }
 
