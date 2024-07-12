@@ -30,8 +30,6 @@ class panmaxTable extends HTMLElement{
 
         var generateBody = () => {
 
-            console.log('generate!')
-
             let datas = JSON.parse(this.getAttribute('datas'));
             if(!datas) return 0;
 
@@ -66,7 +64,6 @@ class panmaxTable extends HTMLElement{
 
         var dataObserver = new MutationObserver((mutations) => {
             mutations.forEach((m) => {
-                console.log(m)
                 if(m.type === 'attributes' && m.attributeName == 'datas'){
                     generateBody();
                 }
