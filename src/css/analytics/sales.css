@@ -134,6 +134,61 @@
     background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 28 28'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23d83128;%7D.cls-1,.cls-2,.cls-3%7Bstroke-width:0px;%7D.cls-2%7Bfill:none;%7D.cls-4%7Bclip-path:url(%23clippath);%7D.cls-3%7Bfill:%23fff;%7D%3C/style%3E%3CclipPath id='clippath'%3E%3Crect class='cls-2' width='28' height='28'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg class='cls-4'%3E%3Ccircle class='cls-1' cx='13' cy='14' r='13'/%3E%3Cpath class='cls-3' d='M19.01,18.77l-2.49-1.27c-.12-.06-.23,0-.29.12v.06h0c-.4.81-1.21,1.68-2.89,1.73-2.78,0-3.18-2.37-3.18-3.01v-4.74c0-.69.46-3.01,3.18-3.01,1.68,0,2.54.93,2.89,1.73.06.06.12.17.23.17h.12l2.43-1.27c.12-.06.12-.17.06-.29h0c-.06-.12-.12-.17-.12-.29-.75-1.33-2.31-2.83-5.61-2.83h0c-3.24,0-4.86,1.5-5.61,2.83-.81,1.21-.87,2.72-.87,3.01v4.45c0,.29.06,1.73.81,3.12.75,1.33,2.31,2.83,5.61,2.83h.06c3.24,0,4.86-1.5,5.61-2.83l.17-.29c0-.06-.06-.17-.12-.23Z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+/* ------------------- button ------------------- */
+
+.btn-edit{
+    display: flex;
+    position: relative;
+    height: 32px;
+    width: auto;
+    padding: 0px 12px;
+    margin: 0px;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    color: #005fe8;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0,0,0.4,1);
+}
+
+.btn-edit:hover{
+    background-color: #ebebed;
+    transition-duration: 0.14s;
+}
+
+/* ------------------- input ------------------- */
+
+.input-cell{
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    height: 32px;
+    width: 100%;
+    padding: 0px 4px;
+    background-color: #ffffff;
+    border: solid 1px #d6d6d6;
+    outline: none;
+}
+
+.input-cell:disabled{
+    opacity: 0.5;
+}
+
+.input-cell::-webkit-outer-spin-button,
+.input-cell::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* ------------------- period viewport ------------------- */
 
 
@@ -610,6 +665,22 @@ tab-navigator span{
     .text-orderNumber::before{
         height: 22px;
         width: 22px;
+    }
+
+    /* ------------------- button ------------------- */
+    
+    .btn-edit{
+        height: 26px;
+        padding: 0px 10px;
+        border-radius: 6px;
+        font-size: 11px;
+    }
+    
+    /* ------------------- input ------------------- */
+    
+    .input-cell{
+        height: 26px;
+        padding: 0px 3px;
     }
     
     /* ------------------- period viewport ------------------- */

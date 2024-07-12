@@ -485,18 +485,11 @@ var init = () => {
 let salesTable = document.querySelector('panmax-table[name=sales]');
 var updateSalesTable = () => {
 
-    let table = salesTable;
-    let max = table.querySelector('input[name=max-table-pagination]') ? 
-    Number(table.querySelector('input[name=max-table-pagination]:checked').value) : 50;
-    let currentPage = table.querySelector('input[name=page]').value;
+    let max = salesTable.querySelector('input[name=max-table-pagination]') ? 
+    Number(salesTable.querySelector('input[name=max-table-pagination]:checked').value) : 50;
+    let currentPage = salesTable.querySelector('input[name=page]').value;
     let period = document.querySelector('period-viewport')
     .getAttribute('selected').split(',');
-
-
-    console.log('//-----------------data update!-----------------//');
-    console.log('최대 표시 행 수: ', max);
-    console.log('현재 페이지 번호: ', currentPage);
-    console.log('기간: ', period);
 
 
 
@@ -507,43 +500,94 @@ var updateSalesTable = () => {
             orderNumber: `<a class="text-orderNumber panmax" href="">245168904</a>`,
             productCode: '둥가둥가3270',
             productName: '비로드필드 레브엑스 플러스 맘모스형 볼링아대 (블랙) - 오른손용 속장갑증정, 블랙, M',
-            productCost: 19000,
+            productCost: `<input class="input-cell" type="number" name="productCost" disabled>`,
             productSell: 299000,
             sellAmt: 32790,
-            sellDate: '2024-05-03'
+            sellDate: '2024-05-03',
+            editBtn: `<button class="btn-edit">원가 수정하기</button>`
         },
         {
             orderNumber: `<a class="text-orderNumber naver" href="">245168904</a>`,
             productCode: '둥가둥가3270',
             productName: '비트코인 대폭락 카펫',
-            productCost: 19000,
+            productCost: `<input class="input-cell" type="number" name="productCost" disabled>`,
             productSell: 299000,
             sellAmt: 90,
-            sellDate: '2024-05-22'
+            sellDate: '2024-05-22',
+            editBtn: `<button class="btn-edit">원가 수정하기</button>`
         },
         {
             orderNumber: `<a class="text-orderNumber coupang" href="">245168904</a>`,
             productCode: '둥가둥가3270',
             productName: '비트코인 대폭락 카펫',
-            productCost: 19000,
+            productCost: `<input class="input-cell" type="number" name="productCost" disabled>`,
             productSell: 299000,
             sellAmt: 90,
-            sellDate: '2024-05-22'
+            sellDate: '2024-05-22',
+            editBtn: `<button class="btn-edit">원가 수정하기</button>`
         }
     ]
-
-
-
-    for(let i = 0; i < 120; i++){
-        dummyData.push(dummyData[i%3]);
-    }
-
+    
     document.querySelector('panmax-table')
     .setAttribute('datas', JSON.stringify(dummyData.slice((currentPage-1)*max, (currentPage-1)*max + max)));
+
+
+    setTimeout(() => {
+
+        salesTable.querySelectorAll('div.body .cell')
+        .forEach(c => {
+            
+            let input = c.querySelector('input[name=productCost]');
+            let button = c.querySelector('.btn-edit');
+
+            input.addEventListener('keydown', (e) => {
+
+                let value = e.target.value;
+
+                // enter
+                if(e.keyCode == 13){
+                    button.innerText = '원가 수정하기';
+                    button.style.color = '';
+                    input.disabled = true;
+
+
+
+                }
+
+
+            })
+
+            button.addEventListener('click', (e) => {
+
+                if(e.target.innerText == '원가 수정하기'){
+
+                    e.target.innerText = '취소하고 닫기';
+                    e.target.style.color = '#de071c';
+                    input.disabled = false;
+                
+                    button.setAttribute('previousValue', input.value);
+
+                }else{
+                    
+                    e.target.innerText = '원가 수정하기';
+                    e.target.style.color = '';
+
+                    input.disabled = true;
+                    input.value = Number(button.getAttribute('previousValue'));
+
+                }
+
+            })
+    
+        })
+
+    }, 0)
+    
     
 
 }
-salesTable.addEventListener('change', () => { updateSalesTable() });
+salesTable.addEventListener('update', (e) => { updateSalesTable() });
+
 
 
 

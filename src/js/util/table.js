@@ -30,6 +30,8 @@ class panmaxTable extends HTMLElement{
 
         var generateBody = () => {
 
+            console.log('generate!')
+
             let datas = JSON.parse(this.getAttribute('datas'));
             if(!datas) return 0;
 
@@ -64,6 +66,7 @@ class panmaxTable extends HTMLElement{
 
         var dataObserver = new MutationObserver((mutations) => {
             mutations.forEach((m) => {
+                console.log(m)
                 if(m.type === 'attributes' && m.attributeName == 'datas'){
                     generateBody();
                 }
@@ -78,7 +81,7 @@ class panmaxTable extends HTMLElement{
                 input.addEventListener('change', (e) => {
                     
                     this.querySelector('input[name=page]').value = 1;
-                    this.dispatchEvent(new Event('change'));
+                    this.dispatchEvent(new Event('update'));
     
                 })
             })
@@ -90,7 +93,7 @@ class panmaxTable extends HTMLElement{
             if(this.querySelector('input[name=page]').value == 1) return 0;
 
             this.querySelector('input[name=page]').value--;
-            this.dispatchEvent(new Event('change'));
+            this.dispatchEvent(new Event('update'));
 
         });
 
@@ -102,7 +105,7 @@ class panmaxTable extends HTMLElement{
             if(dataLength < max) return 0;
 
             this.querySelector('input[name=page]').value++;
-            this.dispatchEvent(new Event('change'));
+            this.dispatchEvent(new Event('update'));
 
         });
 
