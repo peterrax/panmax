@@ -54,6 +54,38 @@ panmax-table div.list{
     position: relative;
 }
 
+panmax-table div.list div{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: -1;
+}
+
+panmax-table div.list.tooltip::before{
+    content: attr(content);
+    display: flex;
+    position: absolute;
+    height: auto;
+    width: max-content !important;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+    left: -12px;
+    top: -8px;
+    opacity: 0;
+    align-items: center;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0,0,0.4,1);
+    pointer-events: none;
+    z-index: 1;
+}
+
+panmax-table div.list.tooltip:hover::before{
+    opacity: 1;
+}
+
 panmax-table div.list.big{
     width: 180px;
 }

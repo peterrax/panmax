@@ -506,7 +506,7 @@ var updateSalesTable = () => {
         {
             orderNumber: `<a class="text-orderNumber panmax" href="">245168904</a>`,
             productCode: '둥가둥가3270',
-            productName: '비트코인 대폭락 카펫',
+            productName: '비로드필드 레브엑스 플러스 맘모스형 볼링아대 (블랙) - 오른손용 속장갑증정, 블랙, M',
             productCost: 19000,
             productSell: 299000,
             sellAmt: 32790,

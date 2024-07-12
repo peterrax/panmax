@@ -7,6 +7,7 @@ class panmaxTable extends HTMLElement{
     connectedCallback(){
         
         let options = this.querySelectorAll('option');
+        let dataLength = 0;
 
         this.innerHTML = `
         <div class="head">
@@ -32,6 +33,9 @@ class panmaxTable extends HTMLElement{
             let datas = JSON.parse(this.getAttribute('datas'));
             if(!datas) return 0;
 
+            dataLength = datas.length;
+            this.removeAttribute('datas');
+
             this.querySelector('div.body').innerHTML =
             datas.map((data) => {
 
@@ -41,7 +45,15 @@ class panmaxTable extends HTMLElement{
                         Object.keys(options).map((key) => {
                             let dataKey = options[key].getAttribute('variable');
                             let size = options[key].getAttribute('size');
-                            return `<div class="list ${size}">${data[dataKey]}</div>`
+                            let tooltip = options[key].getAttribute('tooltip') ? true : false;
+
+                            return `<div class="list ${size} ${tooltip ? 'tooltip' : ''}"
+                            ${tooltip ? `content="${data[dataKey]}"` : ''}>
+                                <div>
+                                    ${data[dataKey]}
+                                </div>
+                            </div>`;
+
                         }).join('')
                     }
                 </div>`;
@@ -84,11 +96,10 @@ class panmaxTable extends HTMLElement{
 
         document.querySelector('button.btn-pagination.next').addEventListener('click', () => {
 
-            let datas = JSON.parse(this.getAttribute('datas'));
             let max = this.querySelector('input[name=max-table-pagination]') ? 
             Number(this.querySelector('input[name=max-table-pagination]:checked').value) : 50;
 
-            if(datas.length < max) return 0;
+            if(dataLength < max) return 0;
 
             this.querySelector('input[name=page]').value++;
             this.dispatchEvent(new Event('change'));
@@ -197,7 +208,9 @@ class tablePaginator extends HTMLElement{
 
         document.querySelector('body').addEventListener('click', (e) => {
             const target = e.target;
-            if(!$(target).is(this.querySelector('p')) && !$(target).is(this.querySelector('div.container')) && !$(target).is(this.querySelector('input[type=radio]'))){
+            if(!$(target).is(this.querySelector('p'))
+            && !$(target).is(this.querySelector('div.container'))
+            && !$(target).is(this.querySelector('input[type=radio]'))){
                 closeDropDown();
             }
         }, true);
