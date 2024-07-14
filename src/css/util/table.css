@@ -61,6 +61,10 @@ panmax-table div.list div{
     z-index: -1;
 }
 
+panmax-table div.list.tooltip{
+    cursor: default;
+}
+
 panmax-table div.list.tooltip::before{
     content: attr(content);
     display: flex;

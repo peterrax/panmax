@@ -492,7 +492,6 @@ var updateSalesTable = () => {
     .getAttribute('selected').split(',');
 
 
-
     // 데이터만 채우는 거임. 그래서, <a> 태그 쓰고 싶으면 테이블에 넣기 전에 미리 만들어줘야 됨.
     // 쉼표나 원화도 미리 변형 시켜줘야됨.
     var dummyData = [
@@ -525,13 +524,25 @@ var updateSalesTable = () => {
             sellAmt: 90,
             sellDate: '2024-05-22',
             editBtn: `<button class="btn-edit">원가 수정하기</button>`
+        },
+        {
+            orderNumber: `<a class="text-orderNumber shopee" href="">245168904</a>`,
+            productCode: '둥가둥가3270',
+            productName: '비트코인 대폭락 카펫',
+            productCost: `<input class="input-cell" type="number" name="productCost" disabled>`,
+            productSell: 299000,
+            sellAmt: 90,
+            sellDate: '2024-05-22',
+            editBtn: `<button class="btn-edit">원가 수정하기</button>`
         }
     ]
     
     document.querySelector('panmax-table')
-    .setAttribute('datas', JSON.stringify(dummyData.slice((currentPage-1)*max, (currentPage-1)*max + max)));
+    .setAttribute('datas', JSON.stringify(dummyData));
 
 
+    // 원가 수정 버튼 액션 추가.
+    // Dom update 이후에 이벤트 핸들. setTimeout(0);
     setTimeout(() => {
 
         salesTable.querySelectorAll('div.body .cell')
@@ -550,10 +561,7 @@ var updateSalesTable = () => {
                     button.style.color = '';
                     input.disabled = true;
 
-
-
                 }
-
 
             })
 
@@ -587,8 +595,6 @@ var updateSalesTable = () => {
 
 }
 salesTable.addEventListener('update', (e) => { updateSalesTable() });
-
-
 
 
 setTimeout(() => {
