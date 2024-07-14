@@ -1,0 +1,138 @@
+alert-popup{
+    box-sizing: border-box;
+    position: fixed;
+    height: 396px;
+    width: 396px;
+    padding: 72px 48px 0px;
+    margin: 0px;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0,0.75,0.7,1);
+    /* mix-blend-mode: difference; */
+    z-index: 22;
+    pointer-events: none;
+}
+
+alert-popup.active{
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition-duration: 0.2s;
+    pointer-events: all;
+}
+
+alert-popup svg{
+    position: relative;
+    height: 124px;
+    width: auto;
+    padding: 0px 0px 36px;
+    margin: 0px auto;
+}
+
+alert-popup h4{
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333333;
+    text-align: center;
+    padding: 0px 0px 12px;
+    margin: 0px;
+}
+
+alert-popup p{
+    position: relative;
+    font-size: 17px;
+    font-weight: 500;
+    color: #333333;
+    text-align: center;
+    line-height: 1.6;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* ------------------------ color ------------------------ */
+
+alert-popup.blue{
+    background-color: rgba(216, 230, 253, 0.5);
+}
+
+alert-popup.blue h4{
+    text-shadow: 0px 0px 20px rgba(216, 230, 253, 0.5);
+}
+
+alert-popup.blue p{
+    text-shadow: 0px 0px 20px rgba(216, 230, 253, 0.5);
+}
+
+alert-popup.blue svg{
+    fill: #3b82f5;
+}
+
+alert-popup.red{
+    background-color: rgba(253, 217, 216, 0.5);
+}
+
+alert-popup.red h4{
+    text-shadow: 0px 0px 20px rgba(253, 217, 216, 0.5);
+}
+
+alert-popup.red p{
+    text-shadow: 0px 0px 20px rgba(253, 217, 216, 0.5);
+}
+
+alert-popup.red svg{
+    fill: #f4413d;
+}
+
+@media screen and (max-width: 1600px){
+    
+    alert-popup{
+        height: 316px;
+        width: 316px;
+        padding: 58px 38px 0px;
+        border-radius: 13px;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+    
+    alert-popup svg{
+        height: 100px;
+        padding: 0px 0px 29px;
+    }
+    
+    alert-popup h4{
+        font-size: 19px;
+        padding: 0px 0px 10px;
+    }
+    
+    alert-popup p{
+        font-size: 14px;
+    }
+
+    /* ------------------------ color ------------------------ */
+    
+
+    alert-popup.blue h4{
+        text-shadow: 0px 0px 16px rgba(216, 230, 253, 0.5);
+    }
+    
+    alert-popup.blue p{
+        text-shadow: 0px 0px 16px rgba(216, 230, 253, 0.5);
+    }
+
+    alert-popup.red h4{
+        text-shadow: 0px 0px 16px rgba(253, 217, 216, 0.5);
+    }
+    
+    alert-popup.red p{
+        text-shadow: 0px 0px 16px rgba(253, 217, 216, 0.5);
+    }
+    
+
+}
